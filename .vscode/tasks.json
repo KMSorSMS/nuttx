@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "make",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build",
+                "j4"
+            ],
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "erase",
+            "type": "shell",
+            "command": "st-flash",
+            "args": [
+                "erase"
+            ],
+            "problemMatcher": "$gcc",
+        },
+        {
+            "label": "flash",
+            "type": "shell",
+            "command": "st-flash",
+            "args": [
+                "--reset",
+                "write",
+                "build/nuttx.bin",
+                "0x8000000"
+            ],
+            "problemMatcher": "$gcc",
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "dependsOn": [
+                "make",
+                "erase"
+            ],
+            "command": "st-flash",
+            "args": [
+                "--reset",
+                "write",
+                "build/nuttx.bin",
+                "0x8000000"
+            ],
+            "problemMatcher": "$gcc",
+        }
+    ]
+}

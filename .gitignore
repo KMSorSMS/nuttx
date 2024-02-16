@@ -58,7 +58,7 @@ uImage
 .context\ *
 # $(TOPDIR)/Makefile.[unix|win]::$(DIRLINKS_EXTERNAL_DIRS)
 .dirlinks
-.vscode
+# .vscode
 .DS_Store
 tools/gdb/__pycache__
 /build

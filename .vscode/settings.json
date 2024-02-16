@@ -1,0 +1,20 @@
+{
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "clangd.arguments": [
+        "--background-index",
+        // 标记compelie_commands.json文件的目录位置
+        "--compile-commands-dir=build",
+        // 同时开启的任务数量
+        "-j=12",
+        // clang-tidy功能
+        "--clang-tidy",
+        // 全局补全（会自动补充头文件）
+        "--all-scopes-completion",
+        // 详细补全
+        "--completion-style=detailed",
+        // 补充头文件
+        "--header-insertion=iwyu",
+        // pch优化的位置
+        "--pch-storage=disk",
+    ]
+}
